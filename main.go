@@ -1,17 +1,13 @@
 package main
 
 import (
-	"fmt"
+	"net/http"
 
-	"github.com/allankovac/gitPluralSight/models"
+	"github.com/allankovac/gitPluralSight/controllers"
 )
 
 func main() {
-	u := models.User{
-		ID:        2,
-		FirstName: "Tricia",
-		LastName:  "McMillan",
-	}
+	controllers.RegisterControllers()
 
-	fmt.Println(u)
+	http.ListenAndServe(":3000", nil)
 }
